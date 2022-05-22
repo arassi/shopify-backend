@@ -20,17 +20,17 @@
 			</div>
 
 			<!-- form handling -->
-			<form action="/api/items/:id" method="POST" id="update_item">
+			<form method="POST" id="update_item">
 
 				<div class="form-group">
 					<label for="name" class="text-dark">Item:</label>
-					<input type="hidden" name="id" value="<%=user._id%>">
+					<input type="hidden" name="id" value="<%=item._id%>">
 					<input type="text" name="item" value="<%=item.item%>" placeholder="Ex: Brush">
 				</div>
 
 				<div class="form-group">
 					<label for="quantity" class="text-dark">Quantity:</label>
-					<input type="number" name="quantity" value="<%=item.quantity" placeholder="Ex: 10">
+					<input type="number" name="quantity" value="<%=item.quantity%>" placeholder="Ex: 10">
 				</div>
 
 				<div class="form-group">

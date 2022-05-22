@@ -1,18 +1,17 @@
-
-<$ for(var i = 0; i < users.length; i++){ %>
+<% for(var i = 0; i < items.length; i++) { %>
 <tr>
-	<td><% = i + 1%></td>
-	<td><% = items[i].item %></td>
-	<td><% = items[i].quantity %></td>
-	<td><% = items[i].location %></td>
-	<td>
-		<a href="/update_item?id=<%=items[i]._id%>" class="btn border-shadow update">
-			<span class="text-gradient"><i class="fa-solid fa-pencil"></i></span>
-		</a>
-		<a class="btn border-shadow delete" data-id=<%=items[i]._id%>>
-			<span class="text-gradient"><i class="fas fa-times"></i></span>
-		</a>
-	</td>
-</tr>
+    <td><%= i + 1 %></td>
+    <td><%= items[i].item %></td>
+    <td><%= items[i].quantity %></td>
+    <td><%= items[i].location %></td>
 
+    <td>
+        <a href="/update_item?id=<%= items[i]._id%>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= items[i]._id%> >
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr>
 <% } %>
