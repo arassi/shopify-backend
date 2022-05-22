@@ -14,13 +14,13 @@ route.get('/', services.homeRoutes);
  *  @description add items
  *  @method GET /add-items
  */
-route.get('/add-item', services.add_item)
+route.get('/add_item', services.add_item)
 
 /**
  *  @description for update items
  *  @method GET /update-items
  */
-route.get('/update-item', services.update_item)
+route.get('/update_item', services.update_item)
 
 // API
 route.post('/api/items', controller.create)

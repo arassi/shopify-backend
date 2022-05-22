@@ -70,7 +70,7 @@ exports.update = (req, res)=>{
 	}
 
 	const id = req.params.id;
-	Itemdb.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
+	Itemdb.findByIdAndUpdate(id, req.body)
 		.then(data =>{
 			if (!data) {
 				res.status(404).send({ message: `Cannot update item with ${id}. Maybe item not found.`})

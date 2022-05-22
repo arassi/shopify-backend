@@ -4,11 +4,11 @@
  	item: {
  		type: String,
  		required: true
- 	}
+ 	},
  	quantity: {
  		type: Number,
  		required: true
- 	}
+ 	},
  	location: {
  		type: String,
  		required: true
