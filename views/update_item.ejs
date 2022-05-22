@@ -1,0 +1,61 @@
+ <!-- Include Header -->
+	<%- include('include/_header') %>
+<!-- Include Header -->
+
+	<!-- Main -->
+	<main id="site-main">
+		<div class="container">
+			<div class="box-nav d-flex-justify-between">
+				<div class="filter">
+					<a href="/"><i class="fa-solid fa-backward"></i> Inventory</a>
+				</div>
+			</div>
+
+			<br>
+			<hr>
+
+			<div class="form-title text-center">
+				<h2 class="text-dark">Update Item</h2>
+				<span class="text-dark">Use the form below to update the item</span>
+			</div>
+
+			<!-- form handling -->
+			<form action="/api/items/:id" method="POST" id="update_item">
+
+				<div class="form-group">
+					<label for="name" class="text-dark">Item:</label>
+					<input type="hidden" name="id" value="<%=user._id%>">
+					<input type="text" name="item" value="<%=item.item%>" placeholder="Ex: Brush">
+				</div>
+
+				<div class="form-group">
+					<label for="quantity" class="text-dark">Quantity:</label>
+					<input type="number" name="quantity" value="<%=item.quantity" placeholder="Ex: 10">
+				</div>
+
+				<div class="form-group">
+					<label for="location" class="text-dark">Location:</label>
+					<br> 
+						<select id="location" name="location" value="<%=item.location%>">
+                           <option value="London">London, UK</option>
+                           <option value="Los Angeles">Los Angeles, CA</option>
+                           <option value="Austin">Austin, TX</option>
+                           <option value="New York">New York, NY</option>
+                           <option value="Atlanta">Atlanta, GA</option>
+                        </select>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn text-dark update">Save</button>
+				</div>
+
+			</form>
+
+			<!-- form handling -->
+		</div>
+	</main>
+	<!-- Main -->
+
+<!-- Include Footer -->
+	<%- include('include/_footer') %>
+<!-- Include Footer -->
