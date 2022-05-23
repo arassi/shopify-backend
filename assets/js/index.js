@@ -52,8 +52,6 @@ if(window.location.pathname == "/"){
     })
 }
 
-}
-
 // function called when the "Extract CSV" button is clicked
 //
 function tableToCSV() {
