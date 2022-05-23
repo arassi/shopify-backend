@@ -1,3 +1,6 @@
+var cors = require('cors');
+app.use(cors());
+
 
 $("#add_item").submit(function(event){
 	alert("Item Inserted Successfully to the Inventory");
