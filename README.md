@@ -30,4 +30,4 @@ npm start
 ```
 
 ## Hosted Version Online:
-https://replit.com/@arassi/shopify-backend
+https://shopify-backend.arassi.repl.co/
