@@ -9,9 +9,9 @@ $("#update_item").submit(function(event){
 	var unindexed_array = $(this).serializeArray();
 	var data = {}
 
-	$.map(unindexed_array.function(n, i){
-		data[n['item']] = n['value']
-	})
+    $.map(unindexed_array, function(n, i){
+        data[n['item']] = n['value']
+    })
 
 	var request = {
 		"url": `http://localhost:3000/api/items/${data.id}`,
@@ -24,22 +24,27 @@ $("#update_item").submit(function(event){
 	})
 })
 
-if (window.location.pathname == "/") {
-	$ondelete = $(".table tbody td a.delete");
-	$ondelete.click(funtion(){
-		var id = $(this).attr("data-id");
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
-		var request = {
-		"url": `http://localhost:3000/api/items/${id}`,
-		"method": "DELETE",
-		}
+if(window.location.pathname == "/"){
+    $ondelete = $(".table tbody td a.delete");
+    $ondelete.click(function(){
+    	console.log("Clicked");
+        var id = $(this).attr("data-id")
 
-		if (confirm("Are you sure you want to delete this item?")) {
-			$.ajax(request).done(function(response){
-			alert("Item Updated Successfully")
-			location.reload()
-		})
+        var request = {
+            "url" : `http://localhost:3000/api/items/${id}`,
+            "method" : "DELETE"
+        }
 
-		}
-	})
+        if(confirm("Do you really want to delete this record?")){
+            $.ajax(request).done(function(response){
+                alert("Item Deleted Successfully!");
+                location.reload();
+            })
+        }
+
+        location.reload();
+
+    })
 }
