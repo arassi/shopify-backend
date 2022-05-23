@@ -5,6 +5,9 @@ const bodyparser = require("body-parser");
 const path = require("path");
 const connectDB = require('./server/database/connection');
 const app = express();
+var cors = require('cors');
+
+app.use(cors());
 
 dotenv.config({path: 'config.env'})
 const PORT = process.env.PORT || 8080
